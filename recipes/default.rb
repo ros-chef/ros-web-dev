@@ -51,7 +51,7 @@ user = node[:ros][:user]
 ros_sv 'rosbridge' do
   user user
   setup_bash "/opt/ros/#{ros_distro}/setup.bash"
-  launch "rosbridge_server rosbridge_websocket.launch"
+  launch "--wait rosbridge_server rosbridge_websocket.launch"
 end
 
 ros_sv 'fibanacci_server' do
